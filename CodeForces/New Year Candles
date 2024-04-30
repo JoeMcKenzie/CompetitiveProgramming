@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+	int a, b;
+	std::cin >> a >> b;
+	int hours = 0;
+	int newCandles = a;
+	int burnedOut = 0;
+	int stored = 0;
+	while (newCandles != 0) {
+		hours += newCandles;
+		burnedOut += newCandles;
+		newCandles = (burnedOut / b);
+		burnedOut = (burnedOut % b);
+	}
+	std::cout << hours;
+}
