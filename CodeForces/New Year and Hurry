@@ -1,0 +1,17 @@
+import java.io.*;
+import java.util.*;
+ 
+public class Main {
+	public static void main(String[] args) throws IOException {
+		Scanner in = new Scanner(System.in);
+		int index = 1;
+		int count = 0;
+		int goal = in.nextInt(); int test = 240 - in.nextInt();
+		while (test - (index * 5) >= 0 && count < goal) {
+			test -= (index * 5);
+			index++;
+			count++;
+		}
+		System.out.println(count);
+	}
+}
