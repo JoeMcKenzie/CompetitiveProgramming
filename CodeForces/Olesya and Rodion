@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+	long long n, t;
+	std::cin >> n >> t;
+	long long num = t;
+	if (n == 1 && t == 10) {
+		std::cout << -1;
+	}
+	else {
+		std::cout << t;
+		if (t == 10) {
+			for (int i = 1; i < n - 1; ++i) {
+				std::cout << 0;
+			}
+		}
+		else {
+			for (int i = 1; i < n; ++i) {
+				std::cout << 0;
+			}
+		}
+	}
+}
