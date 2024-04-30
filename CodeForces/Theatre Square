@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+	long long n, m, a;
+	std::cin >> n >> m >> a;
+	long long mSide = m / a;
+	if ((m % a) > 0) {
+		mSide++;
+	}
+	long long nSide = n / a;
+	if ((n % a) > 0) {
+		nSide++;
+	}
+	std::cout << mSide * nSide;
+}
