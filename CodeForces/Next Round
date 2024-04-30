@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+	int N, K;
+	int count{ 0 };
+	std::cin >> N >> K;
+	std::vector<int> v(N);
+	for (auto& element : v)
+	{
+		std::cin >> element;
+	}
+	int cutoff = v[K-1];
+	std::sort(v.begin(), v.end());
+	for (int i{ 0 }; i < N; ++i)
+	{
+		if ((v[i] >= cutoff) && (v[i] > 0))
+		{
+			count += 1;
+		}
+	}
+	std::cout << count;
+}
