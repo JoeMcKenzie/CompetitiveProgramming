@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+	int a, b, c;
+	int total = 0;
+	bool aFlag;
+	std::cin >> a >> b >> c;
+	if (a < b) {
+		total += a;
+		total += min((a+b), c);
+		total += min(b, (c+a));
+	}
+	else if (b < a) {
+		total += b;
+		total += min((a+b), c);
+		total += min(a, (c+b));
+	}
+	else {
+		total += min((a+a+c), (a+a+a+a));
+	}
+	std::cout << total;
+}
