@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+	long long n, k;
+	std::cin >> n >> k;
+	long long x = ((n + 1) / 2);
+	if (k <= x) {
+		std::cout << (1 + ((k - 1) * 2));
+	}
+	else {
+		std::cout << (2 + ((k - x - 1) * 2));
+	}
+}
