@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+ 
+int main() {
+	int N, D;
+	int MAXD{ 0 };
+	std::cin >> N;
+	std::vector<int> x(N);
+	std::vector<int> y(N);
+	for (auto& element : x)
+	{
+		std::cin >> element;
+	}
+	for (auto& element : y)
+	{
+		std::cin >> element;
+	}
+	for (int k{ 0 }; k < N; ++k)
+	{
+		for (int l{ 0 }; l < N; ++l)
+		{
+			D = std::pow((x[k] - x[l]), 2) + (std::pow((y[k] - y[l]), 2));
+			MAXD = std::max(D, MAXD);
+		}
+	}
+	std::cout << MAXD;
+}
