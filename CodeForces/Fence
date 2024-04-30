@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+const int MAXN = 2e5+5;
+ 
+int main() {
+	int n, k;
+	int index = 1;
+	std::cin >> n >> k;
+	int arr[MAXN];
+	for (int i = 0; i < n; ++i) {
+		std::cin >> arr[i];
+	}
+	int prefixSum[MAXN];
+	for (int j = 0; j < n + 1; ++j) {
+		prefixSum[j + 1] = arr[j] + prefixSum[j];
+	}
+	int min = prefixSum[k] - prefixSum[0];
+	for (int l = 0; l <= n - k; ++l) {
+		if (prefixSum[l + k] - prefixSum[l] < min) {
+			min = prefixSum[l + k] - prefixSum[l];
+			index = l + 1;
+		}
+	}
+	std::cout << index;
+}
